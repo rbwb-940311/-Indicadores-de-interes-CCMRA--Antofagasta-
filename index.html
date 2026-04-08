@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indicadores CCMRA - Cluster Minero Antofagasta</title>
     <style>
-        /* Estilos Base - Reseteo total para maximizar espacio */
+        /* Estilos Base - Eliminamos todo margen externo */
         body, html {
             margin: 0;
             padding: 0;
@@ -13,21 +13,22 @@
             width: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
-            flex-direction: column; /* Apilado vertical */
+            flex-direction: column;
             background-color: #ffffff;
-            overflow: hidden; /* Evita scrolls dobles */
+            overflow: hidden; /* Evita scrolls dobles innecesarios */
         }
 
-        /* --- 1. Franja SUPERIOR de Color (#4AB37F) para Título y Redes --- */
+        /* --- Barra Superior de Color (#4AB37F) --- */
         .header {
             background-color: #4AB37F; 
             padding: 0 20px;
             display: flex;
             align-items: center;
-            height: 50px; /* Altura contenida para priorizar el panel */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: 55px; /* Altura optimizada */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             position: relative;
             z-index: 10;
+            flex-shrink: 0; /* Evita que la barra se encoja */
         }
 
         /* Título Centralizado */
@@ -35,7 +36,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 80%;
+            width: 70%;
             text-align: center;
         }
 
@@ -44,8 +45,8 @@
             font-size: 1.1rem;
             font-weight: 600;
             margin: 0;
-            letter-spacing: 0.5px;
-            white-space: nowrap; /* Evita que el título se corte en PC */
+            letter-spacing: 0.3px;
+            white-space: nowrap;
         }
 
         /* Contenedor Derecho: Redes Sociales */
@@ -58,11 +59,12 @@
 
         .social-link {
             margin-left: 15px;
-            transition: transform 0.2s;
+            text-decoration: none;
+            transition: opacity 0.2s;
         }
 
         .social-link:hover {
-            transform: scale(1.1);
+            opacity: 0.8;
         }
 
         .icon {
@@ -71,43 +73,27 @@
             fill: white;
         }
 
-        /* --- 2. Franja de Logo (Fondo Blanco, DEBAJO de la franja de color) --- */
-        .logo-bar {
-            background-color: #ffffff;
-            height: 100px; /* Altura aumentada para un logo más grande */
-            display: flex;
-            align-items: center;
-            padding: 0 30px; /* Margen izquierdo */
-            border-bottom: 1px solid #eeeeee;
-        }
-
-        .logo {
-            height: 80px; /* Logo notablemente más grande (antes 60px) */
-            width: auto;
-        }
-
-        /* --- 3. Contenedor del Panel Power BI (MAXIMIZADO) --- */
+        /* --- Contenedor del Panel Power BI (Ajuste Total) --- */
         .main-content {
-            flex: 1; /* Ocupa TODO el espacio vertical restante */
-            display: flex;
-            background-color: white;
+            flex: 1; /* Ocupa todo el alto restante de la pantalla */
+            width: 100%;
             margin: 0;
             padding: 0;
+            display: flex;
         }
 
         iframe {
             width: 100%;
             height: 100%;
             border: none;
-            display: block; /* Elimina espacios fantasma inferiores */
+            display: block;
         }
 
-        /* Ajustes para móviles */
+        /* Ajustes para pantallas pequeñas */
         @media (max-width: 768px) {
-            .title { font-size: 0.85rem; }
-            .header-right { display: none; } /* Oculta redes en móvil muy pequeño */
-            .logo-bar { height: 70px; padding: 0 15px; }
-            .logo { height: 55px; }
+            .title { font-size: 0.9rem; }
+            .header-right { display: flex; } 
+            .header { padding: 0 10px; }
         }
     </style>
 </head>
@@ -128,10 +114,6 @@
         </div>
     </header>
 
-    <div class="logo-bar">
-        <img src="logo_cluster.png" alt="Logo CCMRA" class="logo">
-    </div>
-
     <main class="main-content">
         <iframe 
             title="INDICADORES_INTERES_CCMRA" 
@@ -139,10 +121,6 @@
             frameborder="0" 
             allowFullScreen="true">
         </iframe>
-    </main>
-
-</body>
-</html>
     </main>
 
 </body>
