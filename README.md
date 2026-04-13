@@ -7,6 +7,4 @@ En el siguiente podrá encontrar datos relativos a:
 - Dolár observado en Chile
 - Valor Unidad de Fomento (UF)
 - PIB Regional Antofagasta vs PIB Minero Antofagasta
-
-
-https://github.com/robertbwb/-Indicadores-de-interes-CCMRA--Antofagasta-.git
+- Mapa Minero de la Región de Antofagasta
